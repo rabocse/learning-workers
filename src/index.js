@@ -22,6 +22,10 @@ export default {
 	  let html_content = "";
 	  let html_style = "body{padding:6em; font-family: sans-serif;} h1{color:#f6821f;}";
   
+	  let timestamp = " ";
+	  let email =  " ";
+
+
 	  let country = request.cf.country;
 	  let timestamp = request.cf.userAuthenticationTimestamp;
 	  let email = request.headers.get('X-User-Email');
@@ -33,11 +37,17 @@ export default {
 	  // html_content += "<p> <strong>Authenticated Email:</strong> " + email +  "</p>";
 
 
+
 	  // Sentence with static link
-	  html_content +=  "<p> " + email + " authenticated at "  + timestamp + " from " + "<a href=\"http://example.com\"> " + country + "</a> </p>";
+	 // html_content +=  "<p> " + email + " authenticated at "  + timestamp + " from " + "<a href=\"http://example.com\"> " + country + "</a> </p>";
 
 
-	 	let flag_url = `https://flagsapi.com/${country}/flat/64.png`;
+	 	
+		let link = `<a href="https://flagsapi.com/${country}/flat/64.png">${country}</a>`;
+		html_content += `<p>${email} authenticated at ${timestamp} from ${link}</p>`;
+
+
+		let flag_url = `https://flagsapi.com/${country}/flat/64.png`;
 		let flag_image = `<img src="${flag_url}" alt="${country} " width="64" height="64">`;
 
 		// Sentence with flag picture from static link
