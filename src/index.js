@@ -1,18 +1,10 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
 
-// export default {
-// 	async fetch(request, env, ctx) {
-// 		return new Response('Hello Worker!');
-// 	},
-// };
+
+// One more time, although not fully working, I believe the step to complete it is to 
+// get the CF_Authorization cookie and then send it to
+//  https://alexrabocse.cloudflareaccess.com/cdn-cgi/access/get-identity. 
+// This request will return a JSON data structure where the missing email and authentication timestamp can be parsed.
+
 
 
 export default {
