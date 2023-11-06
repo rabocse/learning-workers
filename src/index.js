@@ -15,31 +15,16 @@
 // };
 
 
-// GEOLOCATION EXAMPLE
-
 export default {
 	async fetch(request) {
 	  let html_content = "";
 	  let html_style = "body{padding:6em; font-family: sans-serif;} h1{color:#f6821f;}";
   
-	  let timestamp = " ";
-	  let email =  " ";
-
 
 	  let country = request.cf.country;
 	  let timestamp = request.cf.userAuthenticationTimestamp;
 	  let email = request.headers.get('X-User-Email');
 
-
-	  // html_content += "<p> <strong>Country:</strong> <a href=\"http://example.com\">" + country + "</a></p>";
-
-	  // html_content += "<p> <strong>Authentication Timestamp:</strong> " + timestamp + "</p>";
-	  // html_content += "<p> <strong>Authenticated Email:</strong> " + email +  "</p>";
-
-
-
-	  // Sentence with static link
-	 // html_content +=  "<p> " + email + " authenticated at "  + timestamp + " from " + "<a href=\"http://example.com\"> " + country + "</a> </p>";
 
 
 	 	
@@ -75,24 +60,6 @@ export default {
 	},
   };
 
-
-
-//  CF OBJECT
-
-// export default {
-// 	async fetch(req) {
-// 	  const data =
-// 		req.cf !== undefined
-// 		  ? req.cf
-// 		  : { error: "The `cf` object is not available inside the preview." };
-  
-// 	  return new Response(JSON.stringify(data, null, 2), {
-// 		headers: {
-// 		  "content-type": "application/json;charset=UTF-8",
-// 		},
-// 	  });
-// 	},
-//   };
 
 
 
